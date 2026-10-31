@@ -1,14 +1,14 @@
 
 
-云编译798x特定机型的固件 （p3terx 2024新版 基于ubuntu22.04）
+云编译 MT798x 特定机型固件（基于 Ubuntu 22.04）
 
 路由器型号：
 
-     wr30u / JCG Q30 / x60 new / uax3000e / clx s20l / clx s20p
+     CLX S20P / CLX S20L
 
 说明：
      
-     基于immortalwrt的闭源WIFI固件
+     集成了联发科闭源 Wi-Fi 驱动和硬件加速补丁的 ImmortalWrt 固件
 
      默认地址：192.168.30.1  密码：无，直接回车。
 
@@ -16,22 +16,14 @@ H大源码网址: https://github.com/hanwckf/immortalwrt-mt798x
 
 237大佬源码网址: https://github.com/padavanonly/immortalwrt-mt798x-24.10
 
-dailook大佬源码网址: https://github.com/dailook/immortalwrt-mt798x-6.6
-
 预制菜大佬源码网址: https://github.com/Yuzhii0718/immortalwrt-mt798x-6.6-padavanonly
 
 25.12分支维护大佬chasey-dev网址：https://github.com/chasey-dev/immortalwrt-mt798x-rebase
 
-21.02分支的脚本参考和借鉴加菲猫大佬的云编译脚本：https://github.com/lgs2007m/Actions-OpenWrt
-
 脚本参考有 七曜大佬 ：https://github.com/VIKINGYFY/CloseWRT-CI
-
-因为quickstart的首页温度无法显示正常温度读数，原因为/cgi-bin/luci/istore/system/status/ 这个请求没有 cpuTemperature 这个返回值，这个请求是 /usr/lib/lua/luci/controller/istore_backend.lua 在处理的，但 lua 里只是转给了 quickstart 监听的端口，所以核心问题是 istoreos 的 quickstart 不支持这个架构的 CPU 温度获取所以没有输出。使用了地址为：https://gist.github.com/puteulanus/1c180fae6bccd25e57eb6d30b7aa28aa 提供的修复文件：istore_backend.lua。感谢作者的分享。
 
 使用p3terx云编译模板
 
-固件位置：https://github.com/yhlh9982/MT798X-IstoreOS.style/releases
-     
 注意事项：
 
      不死u-boot用 H 大的刷，地址：https://github.com/hanwckf/bl-mt798x/releases
